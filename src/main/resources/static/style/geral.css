@@ -1,0 +1,320 @@
+* {
+    padding: 0%;
+    margin: 0%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Começo do Background RGB */
+@property --rotate {
+    syntax: "<angle>";
+    initial-value: 132deg;
+    inherits: false;
+  }
+  
+  :root {
+    --card-height: 65vh;
+    --card-width: calc(var(--card-height) / 1.5);
+  }
+.card {
+  background: #191c29;
+  padding: 3px;
+  position: relative;
+  border-radius: 6px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  color: rgb(88 199 250 / 0%);
+  font-family: cursive;
+}
+
+  .card::before {
+    content: "";
+    width: 101.9%;
+    height: 101%;
+    border-radius: 8px;
+    background-image: linear-gradient(
+      var(--rotate)
+      , #5ddcff, #7f00d4 43%, #c20000);
+      position: absolute;
+      z-index: -1;
+      top: -1%;
+      left: -2%;
+      animation: spin 2.5s linear infinite;
+  }
+  
+  .card::after {
+    position: absolute;
+    content: "";
+    top: calc(var(--card-height) / 6);
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    transform: scale(0.8);
+    filter: blur(calc(var(--card-height) / 6));
+    background-image: linear-gradient(
+      var(--rotate)
+      , #5ddcff, #3c67e3 43%, #4e00c2);
+      opacity: 1;
+    transition: opacity .5s;
+    animation: spin 2.5s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      --rotate: 0deg;
+    }
+    100% {
+      --rotate: 360deg;
+    }
+  }
+/* Final do Background RGB */
+
+/* Começo da barra de rolagem */
+body::-webkit-scrollbar {
+    width: 15px;
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: rgba(126, 0, 0, 0.322);
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 0, 0, 0.356);
+  }
+/* Final da barra de rolagem */
+
+/* Div principal */
+#pagina {
+    width: 100%;
+    height: auto;
+    background: linear-gradient(45deg, rgba(198, 12, 12, 0.349), rgba(83, 9, 9, 0.486), rgba(135, 8, 8, 0.589) );
+}
+
+body {
+    background-color: #571e1e;
+}
+/* Começo do Header, Menu, Navbar, Logo */
+#DivAcimaHeader {
+    width: 100%;
+    height: 20px;
+}
+#header {
+    color: #ffffff;
+    max-width: 1500px;
+    height: 50px;
+    background-color: #770000;
+    margin: 0 auto;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+#DivLogo {
+    height: auto;
+    margin-left: 1%;
+    display: flex;
+    justify-content: space-between;
+}
+#DiscountLogo {
+    width: 50px;
+    height: 50px;
+}
+#DivLogoUm {
+    width: 30%;
+    height: 50px;
+}
+#DivLogoDois {
+    width: 70%;
+    height: 50px;
+}
+
+/* Começo do menuhamburguer */
+/* Começo do Navbar normal */
+ul {
+    display: inline-flex;
+    
+    align-items: center;
+}
+
+#UlMenu {
+    width: 70%;
+    display: inline-flex;
+    justify-content: space-around;
+    font-weight: bold;
+}
+
+#menu {
+    display: flex;
+    justify-content: center;
+    /* width: 50%; */
+    margin: 0 auto;
+    padding: 0 auto;
+}
+
+#BotoesMenu {
+    width: 30%;
+    display: block;
+}
+
+@media screen and (max-width:600px) {
+    #BotoesMenu {
+        width: 60%;
+    }
+    
+}
+
+li, a {
+    text-decoration: none !important;
+    list-style: none;
+    /* margin: 5px; */
+    color: rgb(255, 255, 255);
+    text-shadow: #fff 10% !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+.aMargin{
+  margin: 4%;
+}
+
+li:hover {
+    transform: scale(1.1);
+	transition: all .2s;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    /* height: 40px; */
+    width: 25%;
+}
+
+#btnMenu {
+    display: none;
+  }
+/* Final do Navbar normal */
+
+@media screen and (max-width:600px) {
+    #menu {
+      display: block;
+      position: absolute;
+      /* width: 40%; */
+      top: 70px;
+      right: 0;
+      background: #770000;
+      transition: .5s;
+      z-index: 1000;
+      height:0px;
+      visibility: hidden;
+      overflow-y: hidden;
+    }
+    #nav.active #menu {
+      width: 30%;
+      height: auto;
+      display: block;
+      visibility: visible;
+      overflow-y: auto;
+    }
+    #menu li {
+      padding: 1rem;
+      /* margin: 0 1rem; */
+      border-bottom: 2px double rgba(255, 255, 255, 0.267);
+    }
+    #nav a {
+        color: #070707;
+    }
+    #btnMenu {
+      display: flex;
+      padding: .5rem 1rem;
+      font-size: 1rem;
+      border: none;
+      background: none;
+      cursor: pointer;
+      gap: .5rem;
+    }
+    #hamburguer {
+      color: rgb(0, 0, 0);
+      border-top: 2px solid;
+      width: 20px;
+    }
+    #hamburguer::after, #hamburguer::before {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: currentColor;
+      margin-top: 5px;
+      transition: 3.s;
+      position: relative;
+    }
+    #nav.active #hamburguer {
+      border-top-color:transparent ;
+    }
+    #nav.active #hamburguer::before {
+      transform: rotate(135deg);
+    }
+    #nav.active #hamburguer::after {
+      transform: rotate(-135deg);
+      top: -7px;
+    }
+}
+/*final do menuhamburguer */
+
+#DivAbaixoHeader {
+    width: 100%;
+    height: 20px;
+}
+/* Final do Header, Menu, Navbar, Logo */
+
+footer {
+    color: #ffffff;
+    background-color: #3a1515;
+    max-width: 1490px;
+    height: 50px;
+    margin: 0 auto;
+    margin-top: 1%;
+    border-radius: 1rem;
+    padding-left: 10px;
+    padding-top: 5px;
+}
+/* Bordas do Slide  */
+/* Começo Slide */
+.slideshow-container {
+    max-width: 1500px;
+    position: relative;
+    margin: auto;
+  }
+/* Botões do slide */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px 8px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.activedot {
+  background-color: #717171;
+}
+/*Animação fade-in*/
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+.mySlides {
+    border-radius: 1rem;
+}
+.mySlides img {
+    border-radius: 1rem;
+}
+/* Final Slide */
+

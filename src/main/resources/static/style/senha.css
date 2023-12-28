@@ -1,0 +1,111 @@
+
+header {
+    width: 98%;
+    height: 100px;
+    margin: 0 auto;
+    /* background-color: #004d77b2; */
+}
+header h1 {
+    color: #ffff;
+    font-size: 3rem;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    line-height: 100px;
+}
+#DivConteudo {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+#principal {
+    display: flex;
+    margin: 0 auto;
+    flex-direction: row;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.178);
+    margin-bottom: 10%;
+}
+@media screen and (max-width: 900px) {#principal {
+    flex-direction: column;
+}
+}
+#banner {
+    width: 300px;
+    height: 400px;
+    background-image: url(../img/NuncaSalveSenha.png);
+    background-size:100% 100% ;
+
+}
+@media screen and (max-width: 900px) {#banner {
+    width: 100%;
+    height: 180px;
+    background-image: url(../img/NuncaSalveSenhasPequeno.png);
+    background-size: 300px 180px;
+    background-repeat: no-repeat;
+}
+}
+#formularioum {
+    color: #ffff;
+    width: 300px;
+    height: 400px;
+    margin: 0 auto;
+    display: flex;
+    /* justify-content: center; */
+    background-color: #181a217a;
+}
+@media screen and (max-width: 900px) { #formularioum {
+    height: 350px;
+}
+}
+#formularioummeio {
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+}
+#formulariodois {
+    /* background-color: black; */
+    margin: 0 auto;
+    width: 70%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+#UserAndPassword {
+    display: grid;
+}
+.Textlogin{
+    width: 200px;
+    height: 18px;
+    padding: 10px;
+    margin-top: 6px;
+    outline: none;
+    font-size: 15px;
+    border-radius: 2%;
+    border: 1px solid #360101;
+    background-color: #381515;
+    color: white;
+}
+#checkboxdiv {
+    display: flex;
+    align-items: center;
+}
+#SalvarDados {
+    width: 200px;
+}
+#checkbox {
+    width: 15px;
+}
+#buttonEntrar {
+    margin-top: 15%;
+    width: 130px;
+    height: 35px;
+    color:white ;
+    background: linear-gradient(45deg, #ff0000 0%, #ff5d5d 100%);
+    border-radius: 2px;
+    border: none;
+}
