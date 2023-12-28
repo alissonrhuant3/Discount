@@ -39,4 +39,9 @@ public class StoreService {
             throw new DataBaseException(e.getMessage());
         }
     }
+
+    //Método salvar!
+    public Store save(Store store){
+        return repository.save(store);
+    }
 }
