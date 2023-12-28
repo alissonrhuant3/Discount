@@ -7,15 +7,16 @@ import jakarta.persistence.Id;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDate;
 
 @Getter
 @Setter
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
-public class Store implements Serializable { //Classe entidade store
+public class Store implements Serializable { //Classe entidade store!
     private static final long serialVersionUID = 1L;
 
     @EqualsAndHashCode.Include
@@ -27,8 +28,11 @@ public class Store implements Serializable { //Classe entidade store
     private String subTitulo;
     private String promocao;
     private String nomeImagem;
-    private Date data;
+
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
+    private LocalDate data;
     private Double preco;
     private Double precoAnterior;
     private Integer desconto;
+
 }
