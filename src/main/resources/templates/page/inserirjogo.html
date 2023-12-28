@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/bootstrap.css">
+    <link rel="stylesheet" href="/style/geral.css">
+    <link rel="stylesheet" href="/style/inserirjogo.css">
+    <title>Inserir</title>
+    <link rel="website icon" type="png" href="/img/discount2.svg">
+
+</head>
+<body class="card">
+    <div id="pagina">
+        <!--Div acima do header-->
+        <div id="DivAcimaHeader"></div>
+        <!--Header começa aqui-->
+        <div id="header">
+            <!--DivLogo começa aqui-->
+            <div id="DivLogo">
+                <div id="DivLogoUm">
+                <img src="/img/discount2.svg" alt="Logo" id="DiscountLogo">
+                </div>
+                <div id="DivLogoDois">
+                    <h1><a href="/">DiscountsFarm</a></h1>
+                </div>
+            </div>
+            <!--DivLogo termina aqui-->
+            <!--menus começam aqui-->
+            <nav id="nav">
+                <button id="btnMenu">
+                    <span id="hamburguer"></span>
+                  </button>
+                <div id="UlMenu">
+                    <ul id="menu">
+                        <li class="aMargin"><a href="/">Home</a></li>
+                        <li class="aMargin"><a href="/login">Login</a></li>
+                        <li class="aMargin"><a href="/inserirjogo">Inserir Jogo</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <!--menus terminam aqui-->
+        </div>
+        <!--Div abaixo do header-->
+        <div id="DivAbaixoHeader"></div>
+        <div id="DivConteudo">
+            <header>
+                <h1>INSERIR JOGO</h1>
+            </header>
+            <div id="principal">
+                <div id="secaoinserir">
+                        <!-- Começo do form de inserção de jogos-->
+                        <form autocomplete="on" enctype="multipart/form-data" method="post" class="form-inline formPai">
+                            <!-- Inserção de Titulo-->
+                            <div class="form-outline mb-4 formTitulo">
+                                <label class="form-label text-white" for="titulo">Titulo</label>
+                                <input type="text" class="form-control form-control-lg" id="titulo" name="titulo" placeholder="Titulo"/>
+                            </div>
+                            <!-- Inserção de subTitulo-->
+                            <div class="form-outline mb-4 formSubT">
+                                <label class="form-label text-white " for="subTitulo">subTitulo</label>
+                                <input type="text" class="form-control form-control-lg" id="subTitulo" name="subTitulo" placeholder="subTitulo">
+                            </div>
+                            <!-- Inserção de Promoção-->
+                            <div class="form-outline mb-4 formProm">
+                                <label class="form-label text-white " for="promocao">Promoção</label>
+                                <input type="text" class="form-control form-control-lg" id="promocao" name="promocao" placeholder="Promoção">
+                            </div>
+                            <!-- Inserção de Data-->
+                            <div class="form-outline mb-4 formData">
+                                <label class="form-label text-white " for="data">Data</label>
+                                <input type="text" class="form-control form-control-lg" id="data" name="data" placeholder="Data">
+                            </div>
+                            <!-- Inserção de Preço-->
+                            <div class="form-outline mb-4 formPreco">
+                                <label class="form-label text-white " for="preco">Preço</label>
+                                <input type="text" class="form-control form-control-lg" id="preco" name="preco" placeholder="Preço">
+                            </div>
+                            <!-- Inserção de Preço Anterior-->
+                            <div class="form-outline mb-4 formPrecoAnt">
+                                <label class="form-label text-white " for="precoAnterior">Preço Anterior</label>
+                                <input type="text" class="form-control form-control-lg" id="precoAnterior" name="precoAnterior" placeholder="Preço Anterior">
+                            </div>
+                            <!-- Inserção de Descontos-->
+                            <div class="form-outline mb-4 formDescon">
+                                <label class="form-label text-white " for="desconto">Desconto</label>
+                                <input type="text" class="form-control form-control-lg" id="desconto" name="desconto" placeholder="Desconto">
+                            </div>
+                            <!-- Upload Da Capa do Jogo -->
+                            <div id="VerImage" class="form-outline mb-4">
+                                <canvas id="d1"></canvas>
+                                    <p> <input id="file" type="file" name="file" accept="image/*" onchange="upload()">
+                            </div>
+                            
+                            <!-- Botão Enviar-->
+                            <button type="submit" id="BotaoEnviar"
+                            class="btn btn-outline-primary">Enviar</button>
+                          </form>
+                        <!-- Fim do form de inserção de jogos-->
+                </div>
+            </div>
+        <script src="/js/bootstrap.bundle.js"></script>
+        <script src="/js/bootstrap.js"></script>
+        <script src="/js/js.js"></script>
+        <script src="/js/imageuploud.js"></script>
+    </div>
+    <!-- Começo Footer -->
+    <footer>
+        <b>DiscountsFarm&copy;</b><sup>2023</sup><br>
+        Todos os Direitos reservados
+    </footer>
+    <!-- Fim Footer -->
+    
+</body>
+</html>

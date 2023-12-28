@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/geral.css">
+    <link rel="stylesheet" href="/style/index.css">
+    <link rel="stylesheet" href="/style/admin.css">
+    <title>DFarm</title>
+    <link rel="website icon" type="png" href="/img/discount2.svg">
+
+</head>
+<body class="card">
+    <!-- Começo da Div Pai da Pagina Inteira -->
+    <div id="pagina">
+        <!--Div acima da Div header-->
+        <div id="DivAcimaHeader"></div>
+        <!--Div header começa aqui-->
+        <div id="header">
+            <!--DivLogo começa aqui-->
+            <div id="DivLogo">
+                <div id="DivLogoUm">
+                    <img src="/img/discount2.svg" alt="Logo" id="DiscountLogo">
+                </div>
+                <div id="DivLogoDois">
+                    <h1><a href="/">DiscountsFarm</a></h1>
+                </div>
+            </div>
+            <!--DivLogo termina aqui-->
+            <!--menus começam aqui-->
+            <nav id="nav">
+                <button id="btnMenu">
+                    <span id="hamburguer"></span>
+                  </button>
+                <div id="UlMenu">
+                    <ul id="menu">
+                        <li class="aMargin"><a href="/">Home</a></li>
+                        <li class="aMargin"><a href="/login">Login</a></li>
+                        <li class="aMargin"><a href="/inserirjogo">Inserir Jogo</a></li>     
+                    </ul>
+                </div>
+            </nav>
+            <!--menus terminam aqui-->
+        </div>
+        <!--Div abaixo da Div header-->
+        <div id="DivAbaixoHeader"></div>
+        <!-- Div SlideShow começa aqui -->
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+              <img src="/img/backgroundnoblur1500x500.png" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+              <img src="/img/background1500x500.gif" style="width:100%">
+            </div>    
+        </div>
+        <br>        
+            <div style="text-align:center">
+              <span class="dot"></span> 
+              <span class="dot"></span> 
+            </div>
+            <!-- Começo da Div pai dos botões do headerz -->
+            <div id="DivBotoesPai">
+                <!-- Começo das Divs dos botões -->
+                <div class="DivBotoes">
+                    <a href="#">Multiplayer</a>
+                </div>
+                <div class="DivBotoes">
+                    <a href="#">Singleplayer</a>
+                </div>
+                <div class="DivBotoes">
+                    <a href="#">Cooperativo</a>
+                </div>
+                <div class="DivBotoes">
+                    <a href="#">FPS</a>
+                </div>
+                <!-- Fim das Divs dos botões -->
+            </div>
+        <!-- Div SlideShow termina aqui -->
+
+        <!-- Começo da Div dos conteudos -->
+        <div id="DivConteudo">
+            <!-- Titulo do Conteudo -->
+            <div id="ConteudoGame">
+                <h1>Games</h1>
+            </div>
+            <!-- Começo da Div pai dos conteudos -->
+            <div id="PaiDosConteudos">
+                <!-- Começo do Fi 1 do Conteudo Linkado -->
+                    <div class="FiConteudo" th:each="stores : ${store}">
+                        <a href="https://store.steampowered.com/bundle/5699/Grand_Theft_Auto_V_Edio_Premium/" target="_blank">
+                        <img th:src="@{/paginas/mostrarImagem/{imagem}(imagem=${stores.nomeImagem})}">
+                        </a>
+                        <div class="BackFi">
+                            <!-- Titulo E SubTitulo -->
+                            <div class="DivGamesLayouth3">
+                                <h3><span th:text="${stores.titulo}"></span>
+                                    <h4><span th:text="${stores.subTitulo}"></span></h4></h3>
+                            </div>
+                            <!-- PROMOÇÂO ESPECIAL -->
+                            <h5 class="DivGamesLayouth2"><span th:text="${stores.promocao}"></h5>
+                            <!-- Termino de promoção -->
+                            <div class="DivGamesLayoutPromo"><span th:text="${stores.data}"></span></div>
+                            <!-- Preços e Descontos -->
+                            <div calss="DivGamesLayoutPrices">
+                                <!-- Desconto -->
+                                <div class="Disconto">R$ <span th:text="${stores.preco}"></span></div>
+                                <!-- Preço anterior e atual -->
+                                <div class="DiscontoPreco">
+                                    <!-- Preço anterior -->
+                                    <div class="PrecoOriginal">R$ <span th:text="${stores.precoAnterior}"></span></div>
+                                    <!-- Preço atual -->
+                                    <div class="PrecoDisconto">- <span th:text="${stores.desconto}"></span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="BtAlterarExcluir">
+                            <button type="submit" class="btn btn-outline-primary BotaoEnviar">
+                                <a href="#" th:onclick=" 'if(confirm(\'Confirma Exclusão ?\')) { window.location.href = \'' + @{/administrador/{codigoGame}(codigoGame = ${stores.codigoGame})} + '/excluir\'}'">Excluir</a>
+                            </button>
+                            <button type="submit" class="btn btn-outline-primary BotaoEnviar">
+                                <a href="#" role="button" th:href="${(#mvc.url('AC#formAlterar').arg(0, stores.codigoGame)).build()}">Alterar</a>
+                            </button>
+                        </div>          
+                    </div>   
+                <!-- Fim do Fi 1 do Conteudo Linkado -->
+            </div>
+            <!-- Fim da Div pai dos conteudos -->
+        </div>
+        <!-- Fim da Começo da Div dos conteudos -->
+        <!-- Começo Footer -->
+        <footer>
+       <b>DiscountsFarm&copy;</b><sup>2023</sup><br>
+            Todos os Direitos reservados
+        </footer>
+        <!-- Fim Footer -->
+    <script src="/js/js.js"></script>
+    </div>
+    <!-- Fim da Div Pai da Pagina Inteira -->
+</body>
+</html>
