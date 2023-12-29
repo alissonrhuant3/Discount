@@ -43,23 +43,19 @@ public class StoreResource {
 
     //Método para adicionar novo jogo com upload de imagem
     @PostMapping(value = "/inserirjogo")
-    public ResponseEntity<Object> inserirJogos(@Validated Store store, @RequestParam("file")MultipartFile file) {
-        store = ss.save(store);
-
+    public String inserirJogos(@Validated Store store, @RequestParam("file") MultipartFile file) {
+        ss.save(store);
         try {
             if(!file.isEmpty()) {
                 byte[] bytes = file.getBytes();
                 java.nio.file.Path caminho = Paths.get(caminhoImagens+ String.valueOf(store.getCodigoGame()) +file.getOriginalFilename());
                 Files.write(caminho, bytes);
-
                 store.setNomeImagem(String.valueOf(store.getCodigoGame())+file.getOriginalFilename());
                 ss.save(store);
             }
         }catch(IOException e) {
             e.printStackTrace();
         }
-        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{codigoGame}")
-                .buildAndExpand(store.getCodigoGame()).toUri();
-        return ResponseEntity.created(uri).body("redirect:/");
+        return "redirect:/";
     }
 }
