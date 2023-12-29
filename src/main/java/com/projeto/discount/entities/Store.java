@@ -28,6 +28,7 @@ public class Store implements Serializable { //Classe entidade store!
     private String subTitulo;
     private String promocao;
     private String nomeImagem;
+    private String url;
 
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     private LocalDate data;
