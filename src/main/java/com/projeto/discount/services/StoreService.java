@@ -23,7 +23,7 @@ public class StoreService {
     }
 
     //Retornar jogo por ID!
-    public Store findByCodigogame(Long codigoGame){
+    public Store findByCodigoGame(Long codigoGame){
         Optional<Store> obj = repository.findById(codigoGame);
         return obj.orElseThrow(() -> new ResourceNotFoundException(codigoGame)); // Exceção caso não exista no banco de dados o codigogame informado!
     }
