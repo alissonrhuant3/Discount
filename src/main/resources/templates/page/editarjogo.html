@@ -34,9 +34,9 @@
                   </button>
                 <div id="UlMenu">
                     <ul id="menu">
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/login">Login</a></li>
-                        <li><a href="/editarjogo">Inserir Jogo</a></li>
+                        <li class="aMargin"></li><a href="/">Home</a></li>
+                        <li class="aMargin"></li><a href="/login">Login</a></li>
+                        <li class="aMargin"></li><a href="/inserirjogo">Inserir Jogo</a></li>
                     </ul>
                 </div>
             </nav>
@@ -59,33 +59,38 @@
                             </div>
                             <!-- Inserção de subTitulo-->
                             <div class="form-outline mb-4 formSubT">
-                                <label class="form-label text-white " for="subTitulo">subTitulo</label>
+                                <label class="form-label text-white " for="subTitulo">Sub Titulo</label>
                                 <input type="text" class="form-control form-control-lg" id="subTitulo" name="subTitulo" placeholder="subTitulo" required th:value="${store.subTitulo}"/>
                             </div>
                             <!-- Inserção de Promoção-->
                             <div class="form-outline mb-4 formProm">
                                 <label class="form-label text-white " for="promocao">Promoção</label>
-                                <input type="text" class="form-control form-control-lg" id="promocao" name="promocao" placeholder="Promoção" required th:value="${store.promocao}"/>
+                                <input type="text" class="form-control form-control-lg" pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" id="promocao" name="promocao" placeholder="Promoção" required th:value="${store.promocao}"/>
                             </div>
                             <!-- Inserção de Data-->
                             <div class="form-outline mb-4 formData">
                                 <label class="form-label text-white " for="data">Data</label>
-                                <input type="text" class="form-control form-control-lg" id="data" name="data" placeholder="Data" required th:value="${store.data}"/>
+                                <input type="date" class="form-control form-control-lg" id="data" name="data" placeholder="Data" required th:value="${store.data}"/>
                             </div>
                             <!-- Inserção de Preço-->
                             <div class="form-outline mb-4 formPreco">
                                 <label class="form-label text-white " for="preco">Preço</label>
-                                <input type="text" class="form-control form-control-lg" id="preco" name="preco" placeholder="Preço" required th:value="${store.preco}"/>
+                                <input type="number" class="form-control form-control-lg" id="preco" name="preco" placeholder="Preço" required th:value="${store.preco}"/>
                             </div>
                             <!-- Inserção de Preço Anterior-->
                             <div class="form-outline mb-4 formPrecoAnt">
                                 <label class="form-label text-white " for="precoAnterior">Preço Anterior</label>
-                                <input type="text" class="form-control form-control-lg" id="precoAnterior" name="precoAnterior" placeholder="Preço Anterior" required th:value="${store.precoAnterior}"/>
+                                <input type="number" class="form-control form-control-lg" id="precoAnterior" name="precoAnterior" placeholder="Preço Anterior" required th:value="${store.precoAnterior}"/>
                             </div>
                             <!-- Inserção de Descontos-->
                             <div class="form-outline mb-4 formDescon">
                                 <label class="form-label text-white " for="desconto">Desconto</label>
-                                <input type="text" class="form-control form-control-lg" id="desconto" name="desconto" placeholder="Desconto" required th:value="${store.desconto}"/>
+                                <input type="number" class="form-control form-control-lg" id="desconto" name="desconto" placeholder="Desconto" required th:value="${store.desconto}"/>
+                            </div>
+                             <!-- Inserção da url do jogo-->
+                             <div class="form-outline mb-4 formUrl">
+                                <label class="form-label text-white " for="url">URL do Jogo</label>
+                                <input type="text" required="required" class="form-control form-control-lg" id="url" name="url" placeholder="Insira URL" th:value="${store.url}">
                             </div>
                             <!-- Upload Da Capa do Jogo -->
                             <div id="VerImage" class="form-outline mb-4">

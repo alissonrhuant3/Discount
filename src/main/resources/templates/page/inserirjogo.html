@@ -55,37 +55,42 @@
                             <!-- Inserção de Titulo-->
                             <div class="form-outline mb-4 formTitulo">
                                 <label class="form-label text-white" for="titulo">Titulo</label>
-                                <input type="text" class="form-control form-control-lg" id="titulo" name="titulo" placeholder="Titulo"/>
+                                <input type="text" required="required" class="form-control form-control-lg" id="titulo" name="titulo" placeholder="Titulo"/>
                             </div>
                             <!-- Inserção de subTitulo-->
                             <div class="form-outline mb-4 formSubT">
-                                <label class="form-label text-white " for="subTitulo">subTitulo</label>
-                                <input type="text" class="form-control form-control-lg" id="subTitulo" name="subTitulo" placeholder="subTitulo">
+                                <label class="form-label text-white " for="subTitulo">Sub Titulo</label>
+                                <input type="text" required="required" class="form-control form-control-lg" id="subTitulo" name="subTitulo" placeholder="Sub titulo">
                             </div>
                             <!-- Inserção de Promoção-->
                             <div class="form-outline mb-4 formProm">
                                 <label class="form-label text-white " for="promocao">Promoção</label>
-                                <input type="text" class="form-control form-control-lg" id="promocao" name="promocao" placeholder="Promoção">
+                                <input type="text" required="required" pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" class="form-control form-control-lg" id="promocao" name="promocao" placeholder="Promoção">
                             </div>
                             <!-- Inserção de Data-->
                             <div class="form-outline mb-4 formData">
                                 <label class="form-label text-white " for="data">Data</label>
-                                <input type="text" class="form-control form-control-lg" id="data" name="data" placeholder="Data">
+                                <input type="date" required="required" class="form-control form-control-lg" id="data" name="data" placeholder="Data">
                             </div>
                             <!-- Inserção de Preço-->
                             <div class="form-outline mb-4 formPreco">
                                 <label class="form-label text-white " for="preco">Preço</label>
-                                <input type="text" class="form-control form-control-lg" id="preco" name="preco" placeholder="Preço">
+                                <input type="number" required="required" class="form-control form-control-lg" id="preco" name="preco" placeholder="Preço">
                             </div>
                             <!-- Inserção de Preço Anterior-->
                             <div class="form-outline mb-4 formPrecoAnt">
                                 <label class="form-label text-white " for="precoAnterior">Preço Anterior</label>
-                                <input type="text" class="form-control form-control-lg" id="precoAnterior" name="precoAnterior" placeholder="Preço Anterior">
+                                <input type="number" required="required" class="form-control form-control-lg" id="precoAnterior" name="precoAnterior" placeholder="Preço Anterior">
                             </div>
                             <!-- Inserção de Descontos-->
-                            <div class="form-outline mb-4 formDescon">
+                            <div class="form-outline mb-4 formDescon"> 
                                 <label class="form-label text-white " for="desconto">Desconto</label>
-                                <input type="text" class="form-control form-control-lg" id="desconto" name="desconto" placeholder="Desconto">
+                                <input type="number" required="required" class="form-control form-control-lg" id="desconto" name="desconto" placeholder="Desconto">
+                            </div>
+                            <!-- Inserção da url do jogo-->
+                            <div class="form-outline mb-4 formUrl">
+                                <label class="form-label text-white " for="url">URL do Jogo</label>
+                                <input type="text" required="required" class="form-control form-control-lg" id="url" name="url" placeholder="Insira URL">
                             </div>
                             <!-- Upload Da Capa do Jogo -->
                             <div id="VerImage" class="form-outline mb-4">

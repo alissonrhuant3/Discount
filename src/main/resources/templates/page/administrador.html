@@ -88,8 +88,8 @@
             <div id="PaiDosConteudos">
                 <!-- Começo do Fi 1 do Conteudo Linkado -->
                     <div class="FiConteudo" th:each="stores : ${store}">
-                        <a href="https://store.steampowered.com/bundle/5699/Grand_Theft_Auto_V_Edio_Premium/" target="_blank">
-                        <img th:src="@{/paginas/mostrarImagem/{imagem}(imagem=${stores.nomeImagem})}">
+                        <a th:href="${stores.url}" target="_blank">
+                        <img th:src="@{/mostrarImagem/{imagem}(imagem=${stores.nomeImagem})}">
                         </a>
                         <div class="BackFi">
                             <!-- Titulo E SubTitulo -->
@@ -110,7 +110,7 @@
                                     <!-- Preço anterior -->
                                     <div class="PrecoOriginal">R$ <span th:text="${stores.precoAnterior}"></span></div>
                                     <!-- Preço atual -->
-                                    <div class="PrecoDisconto">- <span th:text="${stores.desconto}"></span></div>
+                                    <div class="PrecoDisconto">- <span th:text="${stores.desconto}"></span>%</div>
                                 </div>
                             </div>
                         </div>
@@ -119,7 +119,7 @@
                                 <a href="#" th:onclick=" 'if(confirm(\'Confirma Exclusão ?\')) { window.location.href = \'' + @{/administrador/{codigoGame}(codigoGame = ${stores.codigoGame})} + '/excluir\'}'">Excluir</a>
                             </button>
                             <button type="submit" class="btn btn-outline-primary BotaoEnviar">
-                                <a href="#" role="button" th:href="${(#mvc.url('AC#formAlterar').arg(0, stores.codigoGame)).build()}">Alterar</a>
+                                <a href="#" role="button" th:href="${(#mvc.url('AR#formAlterar').arg(0, stores.codigoGame)).build()}">Alterar</a>
                             </button>
                         </div>          
                     </div>   
