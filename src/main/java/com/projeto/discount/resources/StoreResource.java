@@ -11,6 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 import java.nio.file.Files;
@@ -41,7 +42,7 @@ public class StoreResource {
         return "page/inserirjogo";
     }
 
-    //Método para adicionar novo jogo com upload de imagem
+    //Método para adicionar novo jogo com upload de imagem!
     @PostMapping(value = "/inserirjogo")
     public String inserirJogos(@Validated Store store, @RequestParam("file") MultipartFile file) {
         ss.save(store);
@@ -58,4 +59,18 @@ public class StoreResource {
         }
         return "redirect:/";
     }
+
+
+    //Método para mostrar imagem se existir!
+    @GetMapping("/mostrarImagem/{imagem}")
+    @ResponseBody
+    public byte[] retornarImagem(@PathVariable("imagem") String imagem) throws IOException {
+//		System.out.println(imagem);
+        File imagemArquivo = new File(caminhoImagens + imagem);//imagem == store.nomeImagem!
+        if (imagem != null || imagem.trim().length() > 0) {
+            return Files.readAllBytes(imagemArquivo.toPath());
+        }
+        return null;
+    }
+
 }

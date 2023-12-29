@@ -87,7 +87,7 @@
                 <!-- Começo do Fi 1 do Conteudo Linkado -->
                     <div class="FiConteudo" th:each="stores : ${store}">
                         <a href="https://store.steampowered.com/bundle/5699/Grand_Theft_Auto_V_Edio_Premium/" target="_blank">
-                        <img th:src="@{/paginas/mostrarImagem/{imagem}(imagem=${stores.nomeImagem})}">
+                        <img th:src="@{/mostrarImagem/{imagem}(imagem=${stores.nomeImagem})}">
                         </a>
                         <div class="BackFi">
                             <!-- Titulo E SubTitulo -->
