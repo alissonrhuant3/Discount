@@ -28,6 +28,21 @@ public class StoreService {
         return obj.orElseThrow(() -> new ResourceNotFoundException(codigoGame)); // Exceção caso não exista no banco de dados o codigogame informado!
     }
 
+    //Retornar Jogos multiplayer!
+    public List<Store> findByMultiplayer(){
+        return repository.findByCategoria("multiplayer");
+    }
+
+    //Retornar Jogos singleplayer!
+    public List<Store> findBySingleplayer(){
+        return repository.findByCategoria("singleplayer");
+    }
+
+    //Retornar Jogos coop!
+    public List<Store> findByCooperativo(){
+        return repository.findByCategoria("cooperativo");
+    }
+
     //Deletar por ID!
     public void deleteByCodigoGame(Long codigoGame){
         try{

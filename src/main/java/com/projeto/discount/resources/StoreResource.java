@@ -36,6 +36,36 @@ public class StoreResource {
         return mv;
     }
 
+    //Retorna pagina dos jogos multiplayer!
+    @GetMapping("/multiplayer")
+    public ModelAndView storeMultiplayer(){
+        ModelAndView mv = new ModelAndView("page/multiplayer");
+
+        Iterable<Store> store = ss.findByMultiplayer();
+        mv.addObject("store",store);
+        return mv;
+    }
+
+    //Retorna pagina dos jogos singleplayer!
+    @GetMapping("/singleplayer")
+    public ModelAndView storeSingleplayer(){
+        ModelAndView mv = new ModelAndView("page/singleplayer");
+
+        Iterable<Store> store = ss.findBySingleplayer();
+        mv.addObject("store",store);
+        return mv;
+    }
+
+    //Retorna pagina dos jogos coop!
+    @GetMapping("/cooperativo")
+    public ModelAndView storeCooperativo(){
+        ModelAndView mv = new ModelAndView("page/cooperativo");
+
+        Iterable<Store> store = ss.findByCooperativo();
+        mv.addObject("store",store);
+        return mv;
+    }
+
     //Retorna pagina inserirjogo
     @GetMapping(value = "/inserirjogo")
     public String inserirJogos(){
